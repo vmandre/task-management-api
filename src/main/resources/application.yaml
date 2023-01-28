@@ -1,7 +1,9 @@
 spring:
   datasource:
     url: jdbc:derby:applicationdb
-    driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 logging:
   level:
