@@ -38,9 +38,6 @@ class TaskServiceTest {
         taskService = new TaskService(taskRepository, dtoMapper);
     }
 
-    @AfterEach
-    void tearDown() {
-    }
 
     @Test
     void givenTask_whenSave_thenReturnNewTask() {
