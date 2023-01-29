@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /task-management
+    context-path: /task-management/api/v1
 
 spring:
   datasource:
