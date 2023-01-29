@@ -12,3 +12,7 @@ spring:
 logging:
   level:
     web: ERROR
+
+springdoc:
+  api-docs:
+    path: /api-docs
