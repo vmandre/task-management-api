@@ -1,16 +1,14 @@
-package nz.co.solnet.model;
+package nz.co.solnet.domain.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import nz.co.solnet.service.dto.TaskDTO;
+import nz.co.solnet.domain.service.dto.TaskDTO;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Data
-@RequiredArgsConstructor
 @NoArgsConstructor
 @Entity(name = "tasks")
 public class Task {
