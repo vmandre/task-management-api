@@ -39,12 +39,16 @@ public class Task {
     @Column(nullable = false)
     private LocalDate creationDate;
 
+    public String getStatus() {
+        return calculateStatus();
+    }
+
     private String calculateStatus() {
         if (Objects.isNull(this.dueDate)) {
             return "";
         }
 
-        return this.dueDate.isAfter(this.creationDate)
+        return this.dueDate.isBefore(LocalDate.now())
                 ? "overdue"
                 : "on time";
     }
