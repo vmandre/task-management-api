@@ -1,8 +1,7 @@
-package nz.co.solnet.service;
+package nz.co.solnet.domain.service;
 
-import com.fasterxml.jackson.databind.cfg.MapperBuilder;
-import nz.co.solnet.model.Task;
-import nz.co.solnet.service.dto.TaskDTO;
+import nz.co.solnet.domain.model.Task;
+import nz.co.solnet.domain.service.dto.TaskDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Function;
