@@ -4,7 +4,6 @@ import nz.co.solnet.domain.exception.TaskNotFoundException;
 import nz.co.solnet.domain.model.Task;
 import nz.co.solnet.domain.repository.TaskRepository;
 import nz.co.solnet.domain.service.dto.TaskDTO;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
