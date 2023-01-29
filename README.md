@@ -24,7 +24,8 @@ For both ways to run the application above, the application will be available at
 ## Test
 `mvn test` to run unit tests.
 
-  
+## API collection for testing in Postman
+[task-management-api.postman_collection.json](./task-management-api.postman_collection.json)
  
 ## API Documentation - Swagger UI
 
