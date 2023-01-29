@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:derby:applicationdb
+    url: jdbc:derby:applicationdb;create=true
   jpa:
     hibernate:
       ddl-auto: update
