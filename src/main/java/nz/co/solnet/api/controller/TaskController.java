@@ -43,9 +43,10 @@ public class TaskController {
         return service.update(taskDTO);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @DeleteMapping(path = "/{id}")
     public void deleteTask(@PathVariable Integer id) {
+        System.out.println("delete");
         service.delete(id);
     }
 }
