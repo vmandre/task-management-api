@@ -43,7 +43,8 @@ class TaskControllerTest {
                 1,
                 "dummy task",
                 "This is a dummy task",
-                LocalDate.now()
+                LocalDate.now(),
+                "on time"
         );
         List<TaskDTO> allTasks = Arrays.asList(taskDTO);
 
@@ -79,7 +80,8 @@ class TaskControllerTest {
                 1,
                 "overdue task",
                 "This is an overdue task",
-                LocalDate.now().minusDays(10)
+                LocalDate.now().minusDays(10),
+                "overdue"
         );
         List<TaskDTO> allOverdueTasks = Arrays.asList(taskDTO);
 
@@ -133,7 +135,8 @@ class TaskControllerTest {
                 1,
                 "dummy task",
                 "This is a dummy task",
-                LocalDate.now()
+                LocalDate.now(),
+                "on time"
         );
 
         // when
@@ -153,7 +156,8 @@ class TaskControllerTest {
                 1,
                 "dummy task",
                 "This is a dummy task",
-                LocalDate.now()
+                LocalDate.now(),
+                "on time"
         );
 
         // when
