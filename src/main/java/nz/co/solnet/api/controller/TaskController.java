@@ -1,21 +1,20 @@
-package nz.co.solnet;
+package nz.co.solnet.api.controller;
 
-import nz.co.solnet.service.TaskService;
-import nz.co.solnet.service.dto.TaskDTO;
+import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import nz.co.solnet.domain.service.TaskService;
+import nz.co.solnet.domain.service.dto.TaskDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
-@RequestMapping("task/api/v1/")
+@RequestMapping("/tasks")
 public class TaskController {
 
     private final TaskService service;
-
-    public TaskController(TaskService service) {
-        this.service = service;
-    }
 
     @GetMapping
     public List<TaskDTO> getTasks() {
@@ -29,7 +28,7 @@ public class TaskController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public TaskDTO addTask(@RequestBody TaskDTO taskDTO) {
+    public TaskDTO addTask(@Valid @RequestBody TaskDTO taskDTO) {
         return service.save(taskDTO);
     }
 
