@@ -14,7 +14,8 @@ public class TaskDTOMapper implements Function<Task, TaskDTO> {
                 task.getId(),
                 task.getTitle(),
                 task.getDescription(),
-                task.getDueDate()
+                task.getDueDate(),
+                task.getStatus()
         );
     }
 }

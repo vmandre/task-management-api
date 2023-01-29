@@ -17,5 +17,6 @@ public class TaskDTO {
     private String title;
     private String description;
     private LocalDate dueDate;
+    private String status;
 
 }
