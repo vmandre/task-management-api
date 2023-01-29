@@ -208,7 +208,7 @@ class TaskControllerTest {
         // then
         mvc.perform(delete(URL_TASKS + "/" + taskId)
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNoContent());
+                .andExpect(status().isAccepted());
     }
 
     static String asJsonString(final Object obj) {
