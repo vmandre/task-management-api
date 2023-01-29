@@ -1,10 +1,10 @@
-package nz.co.solnet.service;
+package nz.co.solnet.domain.service;
 
 import jakarta.transaction.Transactional;
-import nz.co.solnet.exception.ResourceNotFoundException;
-import nz.co.solnet.model.Task;
-import nz.co.solnet.repository.TaskRepository;
-import nz.co.solnet.service.dto.TaskDTO;
+import nz.co.solnet.domain.exception.TaskNotFoundException;
+import nz.co.solnet.domain.model.Task;
+import nz.co.solnet.domain.repository.TaskRepository;
+import nz.co.solnet.domain.service.dto.TaskDTO;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -22,9 +22,10 @@ public class TaskService {
         this.taskDTOMapper = taskDTOMapper;
     }
 
+    @Transactional
     public TaskDTO save(TaskDTO taskDTO) {
-        Task task = new Task(taskDTO);
-        task = repository.save(task);
+        final Task task = new Task(taskDTO);
+        repository.save(task);
 
         return taskDTOMapper.apply(task);
 
@@ -38,7 +39,7 @@ public class TaskService {
     }
 
     public List<TaskDTO> getAllOverdueTasks() {
-        return repository.findByDueDateAfter(LocalDate.now())
+        return repository.findByDueDateBefore(LocalDate.now())
                 .stream().map(taskDTOMapper)
                 .collect(Collectors.toList());
     }
@@ -46,15 +47,15 @@ public class TaskService {
     public TaskDTO getTask(Integer id) {
         return repository.findById(id)
                 .map(taskDTOMapper)
-                .orElseThrow(() -> new ResourceNotFoundException(
+                .orElseThrow(() -> new TaskNotFoundException(
                         String.format("task with id [%s] not found", id)
                 ));
     }
 
     @Transactional
     public TaskDTO update(TaskDTO taskDTO) {
-        Task task = repository.findById(taskDTO.getId())
-                .orElseThrow(() -> new ResourceNotFoundException(
+        final Task task = repository.findById(taskDTO.getId())
+                .orElseThrow(() -> new TaskNotFoundException(
                         String.format("task with id [%s] not found", taskDTO.getId())
                 ));
 
@@ -68,21 +69,15 @@ public class TaskService {
 
     }
 
+    @Transactional
     public void delete(Integer id) {
-        boolean notExists = !repository.existsById(id);
-
-        if (notExists) {
-            throw new ResourceNotFoundException(
-                    String.format("task with id [%s] not found", id)
-            );
-        }
-
-        repository.deleteById(id);
+        final Task task = findTask(id);
+        repository.delete(task);
     }
 
     private Task findTask(Integer id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException(
+                .orElseThrow(() -> new TaskNotFoundException(
                         String.format("task with id [%s] not found", id)
                 ));
     }
