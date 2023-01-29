@@ -1,3 +1,7 @@
+server:
+  servlet:
+    context-path: /task-management
+
 spring:
   datasource:
     url: jdbc:derby:applicationdb
