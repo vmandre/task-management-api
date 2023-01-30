@@ -1,3 +1,7 @@
+[![CI](https://github.com/vmandre/task-management-api/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/vmandre/task-management-api/actions/workflows/build.yml)
+
+
+
 # Task Management API Suite
 
 This is a maven project for Task management which uses an embedded derby database to store tasks in a table.
