@@ -4,7 +4,7 @@ version: 2.1
 executors:
   java8:
     docker:
-      - image: 'openjdk:8'
+      - image: 'java:8'
 
 orbs:
   maven: circleci/maven@1.4.0
