@@ -229,9 +229,7 @@
     background: transparent;
     border: 0;
     border-bottom: 1px solid #dfe2e5;
-    overflow: hidden;
     background-color: #e1e4e8;
-    height: .25em;
     margin: 24px 0;
     padding: 0;
     border-bottom-color: #eee;
@@ -241,7 +239,6 @@
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
-	font: inherit;
 	margin: 0;
 	overflow: visible;
 }
