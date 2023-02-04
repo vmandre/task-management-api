@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 @Service
 public class TaskService {
 
+    public static final String TASK_WITH_ID_NOT_FOUND = "task with id [%s] not found";
     private final TaskRepository repository;
     private final TaskDTOMapper taskDTOMapper;
 
@@ -48,7 +49,7 @@ public class TaskService {
         return repository.findById(id)
                 .map(taskDTOMapper)
                 .orElseThrow(() -> new TaskNotFoundException(
-                        String.format("task with id [%s] not found", id)
+                        String.format(TASK_WITH_ID_NOT_FOUND, id)
                 ));
     }
 
@@ -56,7 +57,7 @@ public class TaskService {
     public TaskDTO update(TaskDTO taskDTO) {
         final Task task = repository.findById(taskDTO.getId())
                 .orElseThrow(() -> new TaskNotFoundException(
-                        String.format("task with id [%s] not found", taskDTO.getId())
+                        String.format(TASK_WITH_ID_NOT_FOUND, taskDTO.getId())
                 ));
 
         task.setTitle(taskDTO.getTitle());
@@ -78,7 +79,7 @@ public class TaskService {
     private Task findTask(Integer id) {
         return repository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException(
-                        String.format("task with id [%s] not found", id)
+                        String.format(TASK_WITH_ID_NOT_FOUND, id)
                 ));
     }
 }

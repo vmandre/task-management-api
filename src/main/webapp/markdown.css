@@ -194,6 +194,8 @@
 
 .markdown-body a {
 	background-color: transparent;
+    color: #0366d6;
+    text-decoration: none;
 }
 
 .markdown-body a:active,
@@ -204,6 +206,8 @@
 .markdown-body strong {
 	font-weight: inherit;
 	font-weight: bolder;
+    font-weight: 600;
+
 }
 
 .markdown-body h1 {
@@ -222,14 +226,23 @@
 	box-sizing: content-box;
 	height: 0;
 	overflow: visible;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #dfe2e5;
+    overflow: hidden;
+    background-color: #e1e4e8;
+    height: .25em;
+    margin: 24px 0;
+    padding: 0;
+    border-bottom-color: #eee;
 }
 
 .markdown-body input {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
 	font: inherit;
 	margin: 0;
-}
-
-.markdown-body input {
 	overflow: visible;
 }
 
@@ -242,32 +255,8 @@
 	box-sizing: border-box;
 }
 
-.markdown-body input {
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
-
-.markdown-body a {
-	color: #0366d6;
-	text-decoration: none;
-}
-
 .markdown-body a:hover {
 	text-decoration: underline;
-}
-
-.markdown-body strong {
-	font-weight: 600;
-}
-
-.markdown-body hr {
-	background: transparent;
-	border: 0;
-	border-bottom: 1px solid #dfe2e5;
-	height: 0;
-	margin: 15px 0;
-	overflow: hidden;
 }
 
 .markdown-body hr:before {
@@ -303,10 +292,6 @@
 .markdown-body h6 {
 	margin-bottom: 0;
 	margin-top: 0;
-}
-
-.markdown-body h1 {
-	font-size: 32px;
 }
 
 .markdown-body h1,
@@ -351,6 +336,9 @@
 
 .markdown-body blockquote {
 	margin: 0;
+    border-left: .25em solid #dfe2e5;
+    color: #6a737d;
+    padding: 0 1em;
 }
 
 .markdown-body ol,
@@ -521,20 +509,6 @@
 	margin-top: 0;
 }
 
-.markdown-body hr {
-	background-color: #e1e4e8;
-	border: 0;
-	height: .25em;
-	margin: 24px 0;
-	padding: 0;
-}
-
-.markdown-body blockquote {
-	border-left: .25em solid #dfe2e5;
-	color: #6a737d;
-	padding: 0 1em;
-}
-
 .markdown-body blockquote>:first-child {
 	margin-top: 0;
 }
@@ -567,10 +541,6 @@
 	line-height: 1.25;
 	margin-bottom: 16px;
 	margin-top: 24px;
-}
-
-.markdown-body h1 {
-	font-size: 2em;
 }
 
 .markdown-body h1,
@@ -895,10 +865,6 @@
 .markdown-body .task-list-item input {
 	margin: 0 .2em .25em -1.6em;
 	vertical-align: middle;
-}
-
-.markdown-body hr {
-	border-bottom-color: #eee;
 }
 
 .markdown-body .pl-0 {

@@ -24,12 +24,12 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-        List<ExceptionMessage.Field> fields = new ArrayList();
+        List<ExceptionMessage.Field> fields = new ArrayList<>();
         ex.getBindingResult()
                 .getAllErrors()
                 .forEach(objectError -> {
                     String name = ((FieldError)objectError).getField();
-                    String message = "Invalid field";//messageSource.getMessage(objectError, LocaleContextHolder.getLocale());
+                    String message = "Invalid field";
 
                     fields.add(new ExceptionMessage.Field(name, message));
                 });
