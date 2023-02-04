@@ -1,3 +1,4 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vmandre_task-management-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=vmandre_task-management-api)
 [![CI](https://github.com/vmandre/task-management-api/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/vmandre/task-management-api/actions/workflows/build.yml)
 
 
