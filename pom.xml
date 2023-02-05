@@ -17,8 +17,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<derby.version>10.14.2.0</derby.version>
 		<springdoc-openapi-starter-ui.version>2.0.2</springdoc-openapi-starter-ui.version>
 	</properties>

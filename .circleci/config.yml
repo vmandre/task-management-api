@@ -2,9 +2,9 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 executors:
-  java8:
+  java17:
     docker:
-      - image: 'java:8'
+      - image: 'openjdk:17'
 
 orbs:
   maven: circleci/maven@1.4.0
@@ -13,4 +13,4 @@ workflows:
     jobs:
       - maven/test:
           command: '-X compile'
-          executor: java8
+          executor: java17
