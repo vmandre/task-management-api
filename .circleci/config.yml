@@ -8,9 +8,33 @@ executors:
 
 orbs:
   maven: circleci/maven@1.4.0
+  
+jobs:
+  install-find-command:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Install find command"
+          command: "sudo apt install find"
+
+  install-xargs-command:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Install xargs command"
+          command: "sudo apt install xargs"
+
+
 workflows:
+
   maven_test:
     jobs:
+      - install-find-command
+      - install-xargs-command
       - maven/test:
           command: '-X compile'
           executor: java17
